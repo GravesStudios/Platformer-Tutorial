@@ -1,0 +1,48 @@
+This file is for instructions on making a pass through tile.
+
+To start with, create new tilemap node.
+== create a seperate tileset.
+  -- When creating the tileset, do not outline collisions. It will be handled elsewhere.
+
+Once the tileset is complete and saved, add a StaticBody2D child to the newly formed tilemap.
+The placement of this StaticBody2D does not matter. Next add a CollisionShape2D as a child of the StaticBody2D and give it a rectangle shape.
+
+
+At this point you should currently have a structure like this.
+
+
+-- New_Tilemap
+    -- StaticBody2D
+        -- CollisionShape2D
+
+
+
+You can move the CollisionShape2D to the area you want to only be a one way tile. So you can jump through the bottom but the top will not let you fall through.
+
+ --- For help with lining the collisions up.
+     You want to show the grid and set the grid size to match your tile sizes.
+
+     There is a picture in this folder labeled "One Way Helper Image"
+      -- Inside that is a picture with 2 buttons highlighted. The button that has what looks like a ruler in it is grid snapping. This will show you the grid.
+      -- The one that looks like 3 dots, is a menu. Here is where you adjust the size of the grid to match your tiles.
+          -- Click the 3 buttons and then click the "Configure Snap" from the options that appear.
+              -- Inside the "Configure Snap" menu, change the grid step to what it should be. For example, if the tiles are 64px, then set both Grid Steps to 32px each.
+              -- Then change the "Primary Line Every" option to 1 step instead of 8.
+
+-- Lastly, when selecting the CollisionShape2D from the node tree on the left, mark the option "One Way Collision" for every one of the CollisionShape2D's. This is what gives it the functionality.
+
+--- You can stack multipe CollisionShape2D's under that one StaticBody2D. Then move each CollisionShape2D to where ever you need it.
+
+
+
+
+
+A Finished Scene Example Might Look Like This.
+
+
+--- New Tile Map
+    --- StaticBody2D
+        -- CollisionShape2D
+        -- CollisionShape2D
+        -- CollisionShape2D
+        -- CollisionShape2D

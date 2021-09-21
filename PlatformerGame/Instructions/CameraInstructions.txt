@@ -1,0 +1,14 @@
+This file will help with setting up a camera that mimicks the exact same behaviour as the one in this game (Platformer Game)
+
+The Camera2D should be a child of the Player**
+
+- Inside the inspector window, check the box marked "Current" in the Camera2D options at the very top. This sets this camera to be the camera the game uses.
+
+- Check the "Drag Margin H Enabled" and "Drag Margin V Enabled" buttons. This gives the camera a little bit of "Lee Way" when you are moving the camera. So you can move the player a tiny bit in a direction before the camera will start to follow. (I left the default settings for this - The "Drag Margin" area is where you change this.)
+
+- The Limit area is where you set limits for your camera. This is so the camera doesn't follow the player as they fall of the map. At the top and left side of the game scene editor, there is a ruler with numbers to use for a reference. When using limits, the limit will show up in a bright yellow line in the scene view.
+    == Also, check the Smoothing box inside the limit area. This will reduce some of the jerky feeling when moving
+
+- In the Editor area in the inspector, select the box labeled "Draw Limits". This will allow you to see the limits you provide for the camera.
+
+- Under the Node2D area in the inspector, set the transform position to 0, 0. This is relative to the parent. Since it is a child of the player, this change will center the camera on the player by default. 

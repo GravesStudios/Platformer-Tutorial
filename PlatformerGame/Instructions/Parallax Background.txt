@@ -1,0 +1,66 @@
+This is how to add a "Parallax Background" to the 2d platformer game. 
+
+
+Parallax Effect - "Is the effect of having a scrolling background to illustrate life"
+
+
+In the node tree for your level, add a "ParallaxBackground"
+
+Then as a child of that, you add ParallaxLayers.
+
+Inside the Parallax Layers, you add a Sprite node to hold the image for the layers.
+
+Example Tree:
+
+  -- ParallaxBackground
+    -- ParallaxLayer
+      -- Sprite
+    -- ParallaxLayer
+      -- Sprite
+
+
+**************************************************************************************************************
+**************************************************************************************************************
+**************************************************************************************************************
+
+When adding a sprite, look at the width and height of the image as this becomes important in the scaling.
+
+**************************************************************************************************************
+**************************************************************************************************************
+**************************************************************************************************************
+
+The Godot engine can only do a 2x2 grid using the parallex effect. So if your image is not big enough to cover the entire window, you may need to scale the sprite up.
+
+if you are going to do this, make sure it is on the sprite itself, inside the ParallaxLayer.
+    -- Remember what the scale you used was, as you will need this for settings inside the ParallaxLayer setup.
+
+
+Setup Instructions:
+  -- Add in the correct node tree. Use lines 7 - 20 as an example for the node tree for a Parallax Background
+
+
+  -- Inside the Sprite node
+      -- Add A Image to it.
+      -- Check the image width and height by double clicking on the image in the Godot Editor. This will show a preview of the image in the inspector window.
+         bottom right corner shows dimensions
+      -- Once you are familiar with the size of your item, if need be, you can scale the image by going to the "Transform" area of the Sprite and changing the
+         scale properties. Just keep the scale in mind for that sprites Parallax Layer's setup.
+      -- Lastly for the spirte, go to the "Offset" area and uncheck the box labeled "Centered" as this can cause issues with the parallax effect.
+
+      -- *** If you find yourself needing to make a color adjustment when adding these layers in, you can go to the "Visibility" area inside the Sprite node and
+             adjust the "Modulate" section. This applies a color mask to the texture - effectively changing the color.
+
+  -- Inside the Parallax Layer
+      -- Inside the "Motion" area
+          -- The Scale options depict how often the texture is moved. (The Camera moves at 1, so anything above that and it will be excessive, anything below and it will be slow.)
+          -- The Mirroring option is how many pixels it is to use to mirror. This is where the ratio you used for the sprite is key. 
+              -- So, if the sprite has a scale ratio of 1.5, then in the mirroring you need to take the resolution of the image * 1.5 in both height and width and
+                 use those in the correct places.
+
+                 Ex: 640x480 at 1.5 means the X value is 640*1.5 and the Y value is 480*1.5
+                 -- You can do the math in the editor box itself. -> You can type 640*1.5 in the mirroring x and it will calculate it for you.
+
+                 ** This is to be repeated for every Parallax Layer and Sprite you create for the project. **
+
+
+
