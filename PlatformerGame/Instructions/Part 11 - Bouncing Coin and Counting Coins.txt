@@ -1,0 +1,25 @@
+To start with, open the Coin scene and add a "Animation Player" node.
+
+-- When you add the "Animation Player", if you select that node in the node tree, in the bottom of the screen where a print statement will output, there is now a dropdown box that says animation. If you click that
+It will give you a popup menu with options to save, load, edit etc..
+
+-- Click "New"
+-- Name it "Bounce"
+-- After creating this, it will now show a keyframe option in the animation window at the bottom of the screen.
+
+
+-- Next we are going to select what we want to animate with the Animation Player.
+-- Select the Animated Sprite node. As this is what we will be animating.
+-- In the bottom of the screen by the debugger, you will see a tab labeled "Animation" be sure this is selected.
+
+-- After doing so, you will see little keys next to properties in the inspector area of the Animated Sprite
+-- You can select a key to use to animate based off that property. 
+-- Select the position key in the Transform area of the Inspector.
+
+
+-- Every time that property changes to your desired liking, hit the key button again next to the property. (Remember to have the animation area selected)
+
+
+
+
+

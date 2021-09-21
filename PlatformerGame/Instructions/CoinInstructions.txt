@@ -1,0 +1,51 @@
+This file is to help with setting up the coins in the game.
+
+The node tree for the coin scene looks like this.
+
+
+-- Area2D (Rename to Coin)
+    -- AnimatedSprite
+    -- CollisionShape2D
+
+
+
+Create a script on the Area2D (Coin)
+    -- Clear out all comments and extra bits. All you need is the line at the top that says it extends
+       Area2D
+    -- Next, click back on the Coin node and in the right panel where the inspector is, change the tab
+       to the Node tab. And under signals, select the Body Entered Function. 
+    -- Inside that function, at this time, you only have to put in "queue_free()"
+        -- This is the equivalent of removing a node.
+
+
+
+Next, we are going to establish some physics layers. 
+
+-- Up in the top menu, select "Project" -> "Project Settings"
+    -- On the left hand side, still inside the General Tab, scroll all the way down to the bottom and find
+       the section labeled "Layer Names"
+    -- Click the 2D Physics option
+    -- Name Layers 1 - 5 as:
+        - Player
+        - Platform
+        - Fallzone
+        - Item
+        - Enemy
+        - Fireball
+
+Next we are going to apply these layers in our Level1 Scene.
+
+    **** If you have created individual scenes, for things such as the coin. Make this change in the individual scenes. ****
+
+    -- Click on the Node you want to assign to a layer, and in the inspector tab, find the "Collision" area. 
+    -- There will be a series of boxes labeled "Layer", Click the small little dots to the right,
+       and select the appropriate Layer.
+        -- Example would be the Coin. Select the node, in the inspector area navigate to the Collision area,
+           and click the little dots. Select the "Item" layer.
+
+
+    **** Side note, inside that same Collision area in the inspector, there is a mask option. The things you want the game to detect collision on have to be in the same Mask. So if you take the mask and move it to spot 2 instead of 1 on the tilemap, it will not detect collision and your character will fall straight through.
+
+
+
+
